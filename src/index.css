@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Public+Sans:wght@300;400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Bodoni Moda", serif;
+  --font-sans: "Public Sans", sans-serif;
+  
+  --color-ivory: #fbfbf9;
+  --color-rich-black: #1c1c1c;
+  --color-gold: #d4af37;
+  --color-gold-muted: #b8860b;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-rich-black bg-ivory antialiased selection:bg-gold selection:text-white;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-serif italic;
+  }
+}
+
+.text-reveal {
+  @apply overflow-hidden inline-block;
+}
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.gold-underline {
+  @apply relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-gold/30;
+}
+
+.btn-editorial {
+  @apply relative px-8 py-4 border border-rich-black text-[10px] uppercase tracking-[0.3em] font-bold transition-all duration-700 hover:bg-rich-black hover:text-white;
+}
+
+.service-card {
+  @apply p-12 border-l border-rich-black/5 transition-all duration-700 hover:bg-white hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.08)];
+}
